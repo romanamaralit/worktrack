@@ -3,7 +3,8 @@ module.exports = {
   new: newWork,
   create,
   index,
-  show
+  show,
+  delete: deleteWork
 };
 
 function newWork(req, res) {
@@ -34,3 +35,9 @@ function create(req, res) {
       res.render('works/show', { title: 'Worktrack', work });
     });
   }
+
+  function deleteWork(req, res) {
+    Work.deleteOne(req.params.id);
+    res.redirect('/works');
+  }
+
