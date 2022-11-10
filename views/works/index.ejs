@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Worktrack</title>
+</head>
+<body>
+  <h1>Worktrack</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% works.forEach(w => { %>
+    
+        <tr>
+          <td><%= w.subject %></td>
+          <td><%= w.semester %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
