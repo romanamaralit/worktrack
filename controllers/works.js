@@ -2,7 +2,8 @@ const Work = require('../models/work');
 module.exports = {
   new: newWork,
   create,
-  index
+  index,
+  show
 };
 
 function newWork(req, res) {
@@ -22,15 +23,8 @@ function create(req, res) {
     });
   }
 
-  function index(req,res) {
-    //movies refers to found Movie documents in MondoDB
-    Work.find({}, function(err, works){
-        if (err) {
-            console.log(err);
-            res.redirect("/");
-        }
-        res.render('works/index', {works});
+  function index(req, res) {
+    Work.find({}, function(err, works) {
+      res.render('works/index', { title: 'Worktrack', works });
     });
   }
-
-  //do partials for views

@@ -1,13 +1,20 @@
 const mongoose = require('mongoose');
-// optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
-	        
+
+const todoSchema = new Schema({
+  content: String
+}, {
+  timestamps: true
+});
+
+
 const workSchema = new Schema({
   subject: String,
-  semester: String
+  semester: String,
+  todos: [todoSchema]
 },
 {
   timestamps: true,
 });
 
-module.exports = mongoose.model('Work', workSchema);
+module.exports = mongoose.model('Work', workSchema);   
