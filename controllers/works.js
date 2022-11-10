@@ -32,3 +32,5 @@ function create(req, res) {
         res.render('works/index', {works});
     });
   }
+
+  //do partials for views
