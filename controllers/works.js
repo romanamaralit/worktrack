@@ -7,7 +7,7 @@ module.exports = {
 };
 
 function newWork(req, res) {
-    res.render('works/new');
+    res.render('works/new', { title: 'Add Subject' });
   }
 
 function create(req, res) {
@@ -26,5 +26,11 @@ function create(req, res) {
   function index(req, res) {
     Work.find({}, function(err, works) {
       res.render('works/index', { title: 'Worktrack', works });
+    });
+  }
+
+  function show(req, res) {
+    Work.findById(req.params.id, function(err, work) {
+      res.render('works/show', { title: 'Worktrack', work });
     });
   }
