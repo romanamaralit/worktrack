@@ -36,8 +36,15 @@ function create(req, res) {
     });
   }
 
+
   function deleteWork(req, res) {
-    Work.deleteOne(req.params.id);
+    console.log(req.params.id)
+    // result = Work.deleteOne(req.params.id);
+    // Work.deleteOne({_id: req.params._id});
+    // // result = Work.deleteOne({_id: req.params._id});
+    // console.log(result)
+    const work = new Work(req.body);
+    result = work.deleteMany({});
+    console.log(result);
     res.redirect('/works');
   }
-

@@ -10,13 +10,13 @@
   <tbody>
     <% works.forEach(function(w) { %>
       <tr>
-        <form action="/works/<%= w.id %>?_method=DELETE"
+        <form action="/works/<%= w._id%>?_method=DELETE"
             class="delete-form" method="POST">
             <button type="submit">X</button>
           </form>
         <td><%= w.subject %></td>
         <td><%= w.semester %></td>
-        <td><a href="/works/<%= w._id %>">WORKTRACK</a></td>
+        <td><a href="/works/<%= w._id%>">WORKTRACK</a></td>
       </tr>
       <% }); %>
     </tbody>
