@@ -43,8 +43,7 @@ function create(req, res) {
     // Work.deleteOne({_id: req.params._id});
     // // result = Work.deleteOne({_id: req.params._id});
     // console.log(result)
-    const work = new Work(req.body);
-    result = work.deleteMany({});
-    console.log(result);
+   Work.deleteOne({_id: req.params.id}, function (err,work){
     res.redirect('/works');
+   });
   }
