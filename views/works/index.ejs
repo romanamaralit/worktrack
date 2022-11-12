@@ -9,6 +9,7 @@
   </thead>
   <tbody>
     <% works.forEach(function(w) { %>
+      <% if (user && user._id.equals(w.user)) { %>
       <tr>
         <form action="/works/<%= w._id%>?_method=DELETE"
             class="delete-form" method="POST">
@@ -18,6 +19,7 @@
         <td><%= w.semester %></td>
         <td><a href="/works/<%= w._id%>">WORKTRACK</a></td>
       </tr>
+      <% }); %>
       <% }); %>
     </tbody>
   </table>

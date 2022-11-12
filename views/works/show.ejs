@@ -35,9 +35,15 @@
     <tbody>
       <% work.todos.forEach(function(t) { %>
         <tr>
+          <form action="/works/<%= work._id%>/todos/<%=t._id%>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form>
           <td><%= t.task %></td>
           <td><%= t.deadline %></td>
           <td><%= t.content %></td>
+
+          
 
         </tr>
       <% }); %>

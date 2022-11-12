@@ -28,6 +28,7 @@ function create(req, res) {
 
   function show(req, res) {
     Work.findById(req.params.id, function(err, work) {
+      console.log(work.todos)
       res.render('works/show', { title: 'Worktrack', work });
     });
   }
