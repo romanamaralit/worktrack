@@ -13,7 +13,8 @@ const todoSchema = new Schema({
 const workSchema = new Schema({
   subject: String,
   semester: String,
-  todos: [todoSchema]
+  todos: [todoSchema],
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
 },
 {
   timestamps: true,

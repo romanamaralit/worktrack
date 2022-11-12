@@ -13,6 +13,8 @@ function newWork(req, res) {
 
 function create(req, res) {
     const work = new Work(req.body);
+    const userId = res.locals.user._id
+    work.user = userId
     work.save(function(err) {
       if (err) return res.redirect('/works/new');
       console.log(work);
