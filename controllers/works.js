@@ -13,13 +13,9 @@ function newWork(req, res) {
 
 function create(req, res) {
     const work = new Work(req.body);
-  //save movie into database
     work.save(function(err) {
-      // if we don't redirect, the new page will be shown
-      // with /movies in the address bar
       if (err) return res.redirect('/works/new');
       console.log(work);
-      // for now, redirect right back to new.ejs
       res.redirect('/works');
     });
   }
@@ -36,13 +32,8 @@ function create(req, res) {
     });
   }
 
-
   function deleteWork(req, res) {
     console.log(req.params.id)
-    // result = Work.deleteOne(req.params.id);
-    // Work.deleteOne({_id: req.params._id});
-    // // result = Work.deleteOne({_id: req.params._id});
-    // console.log(result)
    Work.deleteOne({_id: req.params.id}, function (err,work){
     res.redirect('/works');
    });
