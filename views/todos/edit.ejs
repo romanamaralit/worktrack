@@ -6,7 +6,7 @@
             <% if (user) { %>
                 <h1>Edit Todos</h1>
                 <table>
-                <form action="/todos/<%= todo.id%>?_method=PUT" method="POST">
+                <form action="/works/<%= work._id%>/todos/<%=todo.id%>?_method=PUT" method="POST">
                     <label for="task" >Task</label>
                     <input type="text" value="<%= todo.task %>" name="task">
                     <label for="deadline" >Task</label>

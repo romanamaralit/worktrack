@@ -39,9 +39,8 @@ function edit(req, res) {
       .then(function (work) {
           const todo = work.todos.id(req.params.todosId)
           console.log(todo)
-          res.render('todos/edit', { title: "Edit Todo Page", todo })
+          res.render('todos/edit', { title: "Edit Todo Page", todo, work })
       })
-
 }
 
 function update(req, res) {
