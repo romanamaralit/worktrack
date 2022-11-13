@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+
+    <body>
+
+            <% if (user) { %>
+                <h1>Edit Resource</h1>
+                <form action="/works/<%= work._id%>/todos/<%=t._id%>?_method=PUT" method="POST">
+                    <input type="text" value="<%= todo.task %>" name="task">
+                    <input type="text" value="<%= todo.deadline %>" name="deadline">
+                    <input type="text" value="<%= todo.deadline %>" name="content">
+                    <button type="submit" class="btn btn-dark">Save Edits</button>
+                </form>
+                <% } %>
+    </body>
+
+</html>//fix rhis whole thing 

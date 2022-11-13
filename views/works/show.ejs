@@ -39,6 +39,9 @@
             class="delete-form" method="POST">
             <button type="submit">X</button>
           </form>
+          <% if (user) { %>
+          <a href="/todos/<%= work._id %>/edit">Edit Resource</a>
+          <% } %>
           <td><%= t.task %></td>
           <td><%= t.deadline %></td>
           <td><%= t.content %></td>

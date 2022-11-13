@@ -2,7 +2,9 @@ var Work = require('../models/work');
 
 module.exports = {
   create,
-  delete: deleteTodo
+  delete: deleteTodo,
+  update,
+  edit
 };
 
 function create(req, res) {
@@ -32,24 +34,26 @@ function create(req, res) {
     })
 }
 
-  // function deleteTodo(req, res) {
-  //   console.log(req.params.id)
-  //  Work.todos.findById({_id: req.params.todosId}, function (err,todo){
-  //   todo.remove(req.params.todosId)
-  //   res.redirect(/works/)
-  //   // res.redirect(`/works/${work._id}`);
-  //  });
-  // }
+function edit(req, res) {
+  Work.findOne({ '_id': req.params.id })
+      .then(function (work) {
+          const todo = work.todos.id(req.params.id)
+          res.render('todos/edit', { title: "Edit Todo Page", todo })
+      })
 
+}
 
-  // function deleteWork(req, res, next) {
-  //   Work.findOne({'todos._id': req.params.id}).then(function(work) {
-  //     console.log(todos._id)
-  //     todos.findByIdAndRemove(req.params.id);
-  //     work.save().then(function() {
-  //       res.redirect(`/works/${work._id}`);
-  //     }).catch(function(err) {
-  //       return next(err);
-  //     });
-  //   });
-  // }
+function update(req, res) {
+  Work.findOne({ '_id': req.params.id })
+      .then(function (work) {
+          const todo = work.todos.id(req.params.id)
+          todo.task = req.body.task
+          todo.deadline = req.body.deadline
+          todo.content = req.body.content
+
+          work.save(function (err) {
+              if (err) return res.redirect('/works')
+              res.redirect(`/works/${work._id}`)
+          })
+      })
+}
