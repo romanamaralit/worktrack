@@ -30,6 +30,7 @@
       <tr>
         <th>Task</th>
         <th>Deadline</th>
+        <th>Notes</th>
       </tr>
     </thead>
     <tbody>
@@ -40,14 +41,12 @@
             <button type="submit">X</button>
           </form>
           <% if (user) { %>
-          <a href="/todos/<%= work._id %>/edit">Edit Resource</a>
+            <a href="/works/<%= work._id%>/todos/<%=t._id%>/edit">Edit Resource</a>
           <% } %>
           <td><%= t.task %></td>
           <td><%= t.deadline %></td>
           <td><%= t.content %></td>
-
           
-
         </tr>
       <% }); %>
     </tbody>
@@ -57,4 +56,3 @@
 <% } %>
 
 <%- include('../partials/footer') %>
-

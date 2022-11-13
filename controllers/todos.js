@@ -37,7 +37,8 @@ function create(req, res) {
 function edit(req, res) {
   Work.findOne({ '_id': req.params.id })
       .then(function (work) {
-          const todo = work.todos.id(req.params.id)
+          const todo = work.todos.id(req.params.todosId)
+          console.log(todo)
           res.render('todos/edit', { title: "Edit Todo Page", todo })
       })
 
@@ -46,7 +47,7 @@ function edit(req, res) {
 function update(req, res) {
   Work.findOne({ '_id': req.params.id })
       .then(function (work) {
-          const todo = work.todos.id(req.params.id)
+          const todo = work.todos.id(req.params.todosId)
           todo.task = req.body.task
           todo.deadline = req.body.deadline
           todo.content = req.body.content

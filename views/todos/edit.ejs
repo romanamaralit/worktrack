@@ -4,14 +4,17 @@
     <body>
 
             <% if (user) { %>
-                <h1>Edit Resource</h1>
-                <form action="/works/<%= work._id%>/todos/<%=t._id%>?_method=PUT" method="POST">
+                <h1>Edit Todos</h1>
+                <table>
+                <form action="/todos/<%= todo.id%>?_method=PUT" method="POST">
+                    <label for="task" >Task</label>
                     <input type="text" value="<%= todo.task %>" name="task">
-                    <input type="text" value="<%= todo.deadline %>" name="deadline">
-                    <input type="text" value="<%= todo.deadline %>" name="content">
+                    <label for="deadline" >Task</label>
+                    <input type="datetime-local" placeholder= "<%= todo.deadline %>"value="<%= todo.deadline %>" name="deadline">
+                    <label for="content" >Task</label>
+                    <input type="text" value="<%= todo.content %>" name="content">
                     <button type="submit" class="btn btn-dark">Save Edits</button>
                 </form>
                 <% } %>
     </body>
 
-</html>//fix rhis whole thing 
