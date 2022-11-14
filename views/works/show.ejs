@@ -3,14 +3,12 @@
 <%- include('../partials/header') %>
 <body>
   <%- include('../partials/navbar') %>
-<section id="show-page">
-  <div>Subject: </div>
-  <div><%= work.subject %></div>
-  <div>Semester: </div>
-  <div><%= work.semester %></div>
+<section>
+  <h2><%= work.subject %></h2>
+  <h2><%= work.semester %></h2>
 </section>
 
-<br><br><h2>Things to be done:
+<br><h6>Things to be done:
 
   <form id="add-todo-form" method="POST"
   action="/works/<%= work._id %>/todos">
@@ -22,33 +20,41 @@
     </label><br>
     <label>Notes:
       <textarea name="content" id="content"></textarea>
-    </label><br>
+    </label><br> <br>
     <input type="submit" value="Add Todo">
   </form>
-
+<br>
+<br>
 
 <% if (work.todos.length) { %>
-  <table>
+  <table class="table table-hover">
     <thead>
-      <tr>
-        <th>Task</th>
-        <th>Deadline</th>
-        <th>Notes</th>
+      <tr scope="col">
+        <th class="table-info">Task</th>
+        <th class="table-secondary">Deadline</th>
+        <th class="table-success">Notes</th>
+        <th class="table-warning">Edit Todo</th>
+        <th class="table-danger">Done?</th>
       </tr>
     </thead>
     <tbody>
       <% work.todos.forEach(function(t) { %>
-        <tr>
-          <form action="/works/<%= work._id%>/todos/<%=t._id%>?_method=DELETE"
-            class="delete-form" method="POST">
-            <button type="submit">X</button>
-          </form>
           <% if (user) { %>
-            <a href="/works/<%= work._id%>/todos/<%=t._id%>/edit">Edit Resource</a>
-          <% } %>
-          <td><%= t.task %></td>
+            <tr>
+            <td><%= t.task %></td>
           <td><%= t.deadline %></td>
           <td><%= t.content %></td>
+          <td>
+            <a href="/works/<%= work._id%>/todos/<%=t._id%>/edit">Edit</a>
+          <% } %>
+        </td>
+          <td>
+          <form action="/works/<%= work._id%>/todos/<%=t._id%>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button class="btn btn-danger" type="submit">✔</button>
+          </form>
+        </td>
+          
           
         </tr>
       <% }); %>
