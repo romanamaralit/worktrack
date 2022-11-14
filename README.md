@@ -9,7 +9,7 @@ Worktrack is an application for students to organize their todo list by subject.
 ![page to add a subject](images/App#2.png)
 ![page with all the subjects](images/App#3.png)
 ![page to add a task](images/App#4.png)
-![paeg to edit details about the task](images/App#5.png)
+![page to edit details about the task](images/App#5.png)
 
 ### Technologies Used
 -JavaScript
@@ -23,6 +23,10 @@ Worktrack is an application for students to organize their todo list by subject.
 -MongoDB & MongooseJS ODM
 
 -OAuth
+
+-Bootstrap
+
+-Trello
 
 #### Application
 Link to the application: [Worktrack](TBD)
