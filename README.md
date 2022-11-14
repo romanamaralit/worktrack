@@ -6,10 +6,10 @@ Worktrack is an application for students to organize their todo list by subject.
 
 ## Screenshot of Game
 ![homepage](https://i.imgur.com/xrVZDNZ.png)
-![page to add a subject](images/App#2.png)
-![page with all the subjects](images/App#3.png)
-![page to add a task](images/App#4.png)
-![page to edit details about the task](images/App#5.png)
+![page to add a subject](https://i.imgur.com/8efeP60.png)
+![page with all the subjects](https://i.imgur.com/lqxPu56.png)
+![page to add a task](https://i.imgur.com/8yeNQmG.png)
+![page to edit details about the task](https://i.imgur.com/Q137OZQ.png)
 
 ### Technologies Used
 -JavaScript
