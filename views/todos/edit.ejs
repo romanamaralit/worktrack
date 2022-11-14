@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 <%- include('../partials/header') %>
-
-    <body>
+<body>
+  <%- include('../partials/navbar') %>
             <% if (user) { %>
                 <h1>Edit Todos</h1>
                 <table>
@@ -14,6 +16,8 @@
                     <button type="submit" class="btn btn-dark">Save Edits</button>
                 </form>
                 <% } %>
+                </table>
+            </body>
     </body>
 
     
