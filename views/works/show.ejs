@@ -11,16 +11,16 @@
 
 <br><h6>Things to be done:
 
-  <form id="add-todo-form" method="POST"
-  action="/works/<%= work._id %>/todos">
+  <form method="POST"
+  action="/works/<%= work._id %>/todos"><br>
   <label>Task:
     <input type="text" name="task">
-    </label><br>
+    </label><br><br>
     <label>Deadline:
-      <input type="datetime-local" id="deadline" name="deadline">
-    </label><br>
+      <input type="date" name="deadline">
+    </label><br><br>
     <label>Notes:
-      <textarea name="content" id="content"></textarea>
+      <textarea name="content"></textarea>
     </label><br> <br>
     <input type="submit" value="Add Todo">
   </form>

@@ -4,27 +4,14 @@
 <body>
   <%- include('../partials/navbar') %>
 
-<form id="new-form" action="/works" method="POST">
+<form action="/works" method="POST">
   <fieldset>
     <br>
     <h2>Add Subject</h2>
-    <div class="form-group row">
-      <label for="subject" class="col-sm-2 col-form-label">Subject:</label>
-      <div class="col-sm-10">
-        <input type="text" name="subject">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="semester" class="col-sm-2 col-form-label">Semester:</label>
-      <div class="col-sm-10">
-        <input type="text" name="semester">
-      </div>
-      <div class="form-group row">
-        <label for="submitButton" class="col-sm-2 col-form-label"></label>
-        <div class="col-sm-10">
+        <input type="text" name="subject" placeholder= "Subject"> <br> <br>
+        <input type="text" name="semester" placeholder= "Semester"> <br> <br>
+        <label for="submitButton"></label>
           <input type="submit" name="submitButton">
-        </div>
-    </div>
     </fieldset>
 </form>
 </body>
