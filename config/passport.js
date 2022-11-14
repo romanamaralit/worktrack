@@ -1,5 +1,5 @@
 const passport = require("passport");
-// import User Model
+
 const User = require("../models/user");
 
 // Code from Passport.js
