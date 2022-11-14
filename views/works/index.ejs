@@ -3,25 +3,26 @@
 <%- include('../partials/header') %>
 <body>
   <%- include('../partials/navbar') %>
-<table id="list">
+<table class="table table-hover">
   <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Semester</th>
-      <th></th>
+    <tr scope="col">
+      <th class="table-info">Subject</th>
+      <th class="table-secondary">Semester</th>
+      <th class="table-success">Worktrack</th>
+      <th class="table-warning">Delete</th>
     </tr>
   </thead>
   <tbody>
     <% works.forEach(function(w) { %>
       <% if (user && user._id.equals(w.user)) { %>
       <tr>
-        <form action="/works/<%= w._id%>?_method=DELETE"
-            class="delete-form" method="POST">
-            <button type="submit">X</button>
-          </form>
         <td><%= w.subject %></td>
         <td><%= w.semester %></td>
-        <td><a href="/works/<%= w._id%>">WORKTRACK</a></td>
+        <td><a href="/works/<%= w._id%>">DETAILS</a></td>
+      <td>        <form action="/works/<%= w._id%>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button class="btn btn-danger" type="submit">X</button>
+      </form></td>
       </tr>
       <% }; %>
       <% }); %>

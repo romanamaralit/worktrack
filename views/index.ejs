@@ -4,16 +4,7 @@
 
 <body>
   <%- include('./partials/navbar') %>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <% if (user) { %>
-      <li><a href="/works/new">Add Subject</a></li>
-      <li><a href="/works/">Worktrack</a></li>
-      <li><a href="/logout">Log Out</a></li>
-      <% } else { %>
-        <li><a href="/auth/google">Log In</a></li>
-        <% } %>
-  </ul>
+  <h1>Welcome to Worktrack!</h1>
 </body>
 
 </html>
