@@ -1,20 +1,21 @@
 <%- include('../partials/header') %>
 
-
     <body>
-
             <% if (user) { %>
                 <h1>Edit Todos</h1>
                 <table>
                 <form action="/works/<%= work._id%>/todos/<%=todo.id%>?_method=PUT" method="POST">
                     <label for="task" >Task</label>
                     <input type="text" value="<%= todo.task %>" name="task">
-                    <label for="deadline" >Task</label>
+                    <label for="deadline" >Deadline</label>
                     <input type="datetime-local" placeholder= "<%= todo.deadline %>"value="<%= todo.deadline %>" name="deadline">
-                    <label for="content" >Task</label>
-                    <input type="text" value="<%= todo.content %>" name="content">
+                    <label for="content" >Notes</label>
+                    <textarea value="<%= todo.content %>" placeholder = "<%= todo.content %>"value="<%= todo.deadline %>" name="content"></textarea>
                     <button type="submit" class="btn btn-dark">Save Edits</button>
                 </form>
                 <% } %>
     </body>
+
+    
+        
 
