@@ -2,6 +2,7 @@
 
 ## Background
 Application: Worktrack
+
 Worktrack is an application for students to organize their todo list by subject.
 
 ## Screenshot of Game
