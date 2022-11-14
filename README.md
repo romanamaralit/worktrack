@@ -5,7 +5,7 @@ Application: Worktrack
 Worktrack is an application for students to organize their todo list by subject.
 
 ## Screenshot of Game
-![homepage](images/App#1.png)
+![homepage](https://i.imgur.com/xrVZDNZ.png)
 ![page to add a subject](images/App#2.png)
 ![page with all the subjects](images/App#3.png)
 ![page to add a task](images/App#4.png)
